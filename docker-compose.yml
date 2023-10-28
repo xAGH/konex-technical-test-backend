@@ -1,0 +1,17 @@
+version: "3"
+services:
+  postgres:
+    image: "postgres:16-alpine"
+    environment:
+      POSTGRES_USER: konex
+      POSTGRES_PASSWORD: konex
+      POSTGRES_DB: automobile_company
+    volumes:
+      - postgres_volume:/var/lib/postgresql/data
+    restart: always
+    container_name: postgres
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_volume:
