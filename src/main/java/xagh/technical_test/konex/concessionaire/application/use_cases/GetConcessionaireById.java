@@ -2,7 +2,7 @@ package xagh.technical_test.konex.concessionaire.application.use_cases;
 
 import xagh.technical_test.konex.common.annotations.Transaction;
 import xagh.technical_test.konex.common.annotations.UseCase;
-import xagh.technical_test.konex.concessionaire.application.ports.GetConcessionairePort;
+import xagh.technical_test.konex.concessionaire.application.ports.GetConcessionaireByIdPort;
 import xagh.technical_test.konex.concessionaire.domain.models.ConcessionaireModel;
 import xagh.technical_test.konex.concessionaire.domain.reporitories.ConcessionaireRepository;
 
@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @UseCase
 @Transaction
-public class GetConcessionaireById implements GetConcessionairePort {
+public class GetConcessionaireById implements GetConcessionaireByIdPort {
 
     private final ConcessionaireRepository concessionaireRepository;
 
@@ -19,8 +19,8 @@ public class GetConcessionaireById implements GetConcessionairePort {
     }
 
     @Override
-    public ConcessionaireModel invoke(UUID uuid) {
-        return concessionaireRepository.findOne(uuid);
+    public ConcessionaireModel invoke(UUID id) {
+        return concessionaireRepository.findOne(id);
     }
 
 }

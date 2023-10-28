@@ -10,10 +10,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import xagh.technical_test.konex.client.infrastructure.entities.ClientEntity;
+import xagh.technical_test.konex.personnel.infrastructure.entities.PersonnelEntity;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -29,6 +32,7 @@ public class ConcessionaireEntity implements Serializable {
 
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @Column(name = "name", nullable = false)
@@ -64,10 +68,17 @@ public class ConcessionaireEntity implements Serializable {
     @Column(name = "deleted_at")
     private LocalDateTime deletedAt;
 
-//    @OneToMany(
-//            mappedBy = "concessionaire",
-//            cascade = CascadeType.ALL,
-//            orphanRemoval = true
-//    )
-//    private List<ClientModel> clients;
+    @OneToMany(
+            mappedBy = "concessionaire",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<PersonnelEntity> users;
+
+    @OneToMany(
+            mappedBy = "concessionaire",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<ClientEntity> clients;
 }

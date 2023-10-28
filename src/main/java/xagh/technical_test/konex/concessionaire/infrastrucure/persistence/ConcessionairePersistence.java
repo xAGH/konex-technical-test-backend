@@ -30,21 +30,21 @@ public class ConcessionairePersistence implements ConcessionaireRepository {
     }
 
     @Override
-    public ConcessionaireModel findOne(UUID entityId) {
+    public ConcessionaireModel findOne(UUID modelId) {
         return ConcessionaireMapper.entityToModel(
                 repository
-                        .findById(entityId)
-                        .orElseThrow(() -> new ConcessionaireNotFound(entityId))
+                        .findById(modelId)
+                        .orElseThrow(() -> new ConcessionaireNotFound(modelId))
         );
     }
 
     @Override
-    public ConcessionaireModel update(UUID entityId, ConcessionaireModel entity) {
+    public ConcessionaireModel update(ConcessionaireModel model) {
         return null;
     }
 
     @Override
-    public ConcessionaireModel delete(UUID entityId) {
+    public ConcessionaireModel delete(UUID modelId) {
         return null;
     }
 }

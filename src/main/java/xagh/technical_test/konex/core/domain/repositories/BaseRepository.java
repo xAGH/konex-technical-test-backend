@@ -3,16 +3,16 @@ package xagh.technical_test.konex.core.domain.repositories;
 import java.util.List;
 import java.util.UUID;
 
-public interface BaseRepository<T> {
+public interface BaseRepository<Model> {
 
-    T save(T entity);
+    Model save(Model model);
 
-    List<T> findAll();
+    List<Model> findAll();
 
-    T findOne(UUID entityId);
+    Model findOne(UUID modelId);
 
-    T update(UUID entityId, T entity);
+    Model update(Model model);
 
-    T delete(UUID entityId);
+    Model delete(UUID modelId);
 
 }

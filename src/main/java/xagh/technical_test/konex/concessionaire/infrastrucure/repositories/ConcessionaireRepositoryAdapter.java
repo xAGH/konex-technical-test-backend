@@ -5,5 +5,5 @@ import xagh.technical_test.konex.concessionaire.infrastrucure.entities.Concessio
 
 import java.util.UUID;
 
-public interface ConcessionaireRepositoryAdapter extends JpaRepository<ConcessionaireEntity, UUID> {
+public interface  ConcessionaireRepositoryAdapter extends JpaRepository<ConcessionaireEntity, UUID> {
 }

@@ -4,6 +4,6 @@ import xagh.technical_test.konex.concessionaire.domain.models.ConcessionaireMode
 
 import java.util.UUID;
 
-public interface GetConcessionairePort {
-    ConcessionaireModel invoke(UUID uuid);
+public interface GetConcessionaireByIdPort {
+    ConcessionaireModel invoke(UUID id);
 }

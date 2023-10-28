@@ -3,7 +3,6 @@ package xagh.technical_test.konex.concessionaire.domain.models;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import xagh.technical_test.konex.client.domain.entities.Client;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -19,7 +18,7 @@ public class ConcessionaireModel {
     private Double lon;
     private String phone;
     private Boolean available;
-    private ArrayList<Client> clients;
+    private ArrayList<UUID> clients;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
@@ -29,14 +28,14 @@ public class ConcessionaireModel {
         this.id = UUID.randomUUID();
     }
 
-    public void addClient(Client client) {
+    public void addClient(UUID client) {
         if (this.clients == null) {
             this.clients = new ArrayList<>();
         }
         this.clients.add(client);
     }
 
-    public void addClient(ArrayList<Client> client) {
+    public void addClient(ArrayList<UUID> client) {
         if (this.clients == null) {
             this.clients = new ArrayList<>();
         }

@@ -6,6 +6,6 @@ import java.util.UUID;
 
 public class ConcessionaireNotFound extends EntityNotFound {
     public ConcessionaireNotFound(UUID id) {
-        super(String.format("Concessionaire with id %s not found.", id.toString()));
+        super("Concessionaire", id.toString());
     }
 }
